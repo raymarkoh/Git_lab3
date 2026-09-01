@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f0f2f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      color: #1877f2;
+      font-size: 42px;
+      font-weight: bold;
+      margin-top: 45px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      width: 430px;
+      max-width: 95%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header h1 {
+      font-size: 25px;
+      color: #1c1e21;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      color: #606770;
+      font-size: 15px;
+    }
+
+    form {
+      padding: 20px;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row input {
+      width: 50%;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ccd0d5;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #1877f2;
+      box-shadow: 0 0 0 1px #1877f2;
+    }
+
+    .label {
+      color: #606770;
+      font-size: 12px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .birthday {
+      display: flex;
+      gap: 8px;
+    }
+
+    .birthday select {
+      flex: 1;
+    }
+
+    .gender {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .gender label {
+      flex: 1;
+      border: 1px solid #ccd0d5;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .terms {
+      color: #777;
+      font-size: 11px;
+      line-height: 1.5;
+      margin: 10px 0 18px;
+    }
+
+    .terms a {
+      color: #385898;
+      text-decoration: none;
+    }
+
+    button {
+      display: block;
+      width: 190px;
+      margin: auto;
+      border: none;
+      border-radius: 6px;
+      background: #42b72a;
+      color: white;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #36a420;
+    }
+
+    .login {
+      text-align: center;
+      padding: 0 20px 25px;
+    }
+
+    .login a {
+      color: #1877f2;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        font-size: 36px;
+        margin-top: 25px;
+      }
+
+      .card {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="logo">MyBook</div>
+
+  <div class="card">
+
+    <div class="header">
+      <h1>Create a new account</h1>
+      <p>It's quick and easy.</p>
+    </div>
+
+    <form id="registerForm">
+
+      <div class="row">
+        <input type="text" id="firstName" placeholder="First name" required>
+        <input type="text" id="lastName" placeholder="Last name" required>
+      </div>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Mobile number or email"
+        required
+      >
+
+      <input
+        type="password"
+        id="password"
+        placeholder="New password"
+        minlength="8"
+        required
+      >
+
+      <label class="label">Birthday</label>
+
+      <div class="birthday">
+        <select id="month" required>
+          <option value="">Month</option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+
+        <select id="day" required>
+          <option value="">Day</option>
+        </select>
+
+        <select id="year" required>
+          <option value="">Year</option>
+        </select>
+      </div>
+
+      <label class="label">Gender</label>
+
+      <div class="gender">
+        <label>
+          Female
+          <input type="radio" name="gender" value="Female" required>
+        </label>
+
+        <label>
+          Male
+          <input type="radio" name="gender" value="Male">
+        </label>
+
+        <label>
+          Custom
+          <input type="radio" name="gender" value="Custom">
+        </label>
+      </div>
+
+      <p class="terms">
+        By clicking Sign Up, you agree to our
+        <a href="#">Terms</a>,
+        <a href="#">Privacy Policy</a> and
+        <a href="#">Cookies Policy</a>.
+      </p>
+
+      <button type="submit">Sign Up</button>
+
+      <div id="message"></div>
+
+    </form>
+
+    <div class="login">
+      <a href="#">Already have an account?</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Generate days
+    const daySelect = document.getElementById("day");
+
+    for (let i = 1; i <= 31; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      daySelect.appendChild(option);
+    }
+
+    // Generate years
+    const yearSelect = document.getElementById("year");
+    const currentYear = new Date().getFullYear();
+
+    for (let i = currentYear; i >= 1900; i--) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      yearSelect.appendChild(option);
+    }
+
+    // Form submission
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const message = document.getElementById("message");
+
+      message.style.color = "#42b72a";
+      message.textContent = "Account created successfully!";
+
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
+
